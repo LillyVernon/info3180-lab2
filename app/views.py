@@ -5,8 +5,11 @@ Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
 
-from app import app
-from flask import render_template, request, redirect, url_for, flash
+#from app import app
+from datetime import date
+from flask import Flask, render_template, request, redirect, url_for, flash
+
+app = Flask(__name__)
 
 
 ###
@@ -24,7 +27,18 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
 
+@app.route('/profile/')
+def profile():
+    """Render the website's profile page."""
+    month=date.today().strftime('%B')
+    year=date.today().strftime('%Y')
+    date_joined=format_date_joined(month,year)
+    
+    return render_template('profile.html', date_joined=date_joined)
 
+def format_date_joined(month,year):
+
+    return month + ", " + year
 ###
 # The functions below should be applicable to all Flask apps.
 ###
