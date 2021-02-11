@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Website - About</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+
+
+
+</head> -->
+{% extends "base.html" %} {% block main %}
+
+<body>
+    <div class="div1">
+        <div class="div2">
+            <img src="{{ url_for('static', filename='mikasa1.jpg') }}">
+
+            <h3> Mikasa Ackerman</h3>
+            <h5> @m_ackerman</h5>
+            <h5>Wall, Maria </h5>
+            <h5> Joined {{ date_joined }} </h5>
+
+            <h6> </h6>
+
+        </div>
+        <div class="div3">
+            <p id="bio"> A member of the Survey Corps and the top ranked member of the 104th Training Corps. </p>
+
+            <div class="div4">
+                <div>
+                    <h4>7</h4>
+                    <p>Posts </p>
+                </div>
+                <div>
+
+                    <h4>0</h4>
+                    <p>Following </p>
+                </div>
+                <div>
+                    <h4>1000</h4>
+                    <p>Followers </p>
+                </div>
+
+            </div>
+            <button>Follow </button>
+        </div>
+
+    </div>
+</body>
+{% endblock %}
+<!-- </html> -->
